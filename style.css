@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /*font-weight: 500;
+    font-style: normal*/
+}
+.portfolio-container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;  /*the nav list comes inline with the right and left containers*/
+}
+.navlist{              /*to arrang it in a row/horizontal line*/
+    display: flex;
+    gap: 3.5rem;      /*to create spacing between the lists*/
+    height: 15vh;
+    width: 100%;
+    justify-content: center;  /* centers horizontally*/
+    align-items: center;       /*centers vertically*/
+    position: fixed;     /*the nav bar will be position correctly over the two containers, and the container will be displayed correctly*/
+
+
+}
+/*to remove the bullet dots*/
+.navlist li{
+    list-style: none;
+}
+/* to remove the underlines*/
+.navlist li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+}
+.left-container, .right-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.left-container{
+    background: #262525;
+    width: 70%;
+    padding-left: 3rem;
+
+
+}
+
+.right-container{
+    /*background: #3877FF;*/
+    background: linear-gradient(#4f0227, #262525);
+    width: 30%;
+}
+.icons .fa-brands{
+    color: #bbb;
+    font-size: 1.7rem;
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+.content{
+    margin-left: 4rem;
+}
+.content .intro{
+    font-size: 1.5rem;
+    /*color: #fff;*/
+    /*color: #3877ff;*/
+    color: #5DB9EE;
+}
+.content .intro span{
+    /*color: #E84A5F;*/
+    color: #fb057c;
+    /*color: #5DB9EE;*/
+
+}
+
+.content h1{
+    font-size: 3rem;
+    /*color: #5DB9EE;*/
+    /*color: #E84A5F;*/
+    color: #b8045b;
+}
+.content .detail{
+    font-size: 1.1rem;
+    color: #fff;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;   /*margin for the 'top' is 1.1rem, 'right' is 0, 'bottom' is 3rem, and 'left' is 0 */
+    line-height: 1.8rem;   /*adding space between the paragraph lines*/
+}
+.btn-container button{
+    border: .1rem solid #5DB9EE;
+    font-size: 1.1rem;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+button:nth-child(1){
+    background: #5DB9EE;
+    color: #262525;
+
+}
+button:nth-child(2){
+    background: transparent;
+    color: #5DB9EE;
+    margin-left: 2rem;
+}
+button:nth-child(1):hover{
+    background: transparent;
+    color: #5DB9EE;
+}
+button:nth-child(2):hover{
+    background: #5DB9EE;
+    color: #262525;
+}
+.icons .fa-brands:hover{
+    cursor: pointer;
+    background: linear-gradient(#fff, #3877ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.design .circle{
+    aspect-ratio: 1;  /*when creating a circle the width and height should be the same.
+                       The aspect-ratio: 1; will automatically set the heigth of the circle 
+                       equal to the width for the circle:nth-child(1) and circle:nth-child(2) */ 
+    position: absolute; /*to center any element eg.the circle use the position: absolute; border-radius: 50%; top: 50%;...*/
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+
+}
+.circle:nth-child(1){
+    background: linear-gradient(90deg, transparent 50%, #262525 50%);
+    width: 38rem;
+}
+.circle:nth-child(2){
+    
+    width: 30rem;
+    background-image: url("image/B032004LISFER40.JPG");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    box-shadow: 
+    0 0 1rem #fff,
+    inset 0 0 1rem #fff,              /* will add shadow to the inner inside of the circle*/ 
+    0 0 2rem #4f0227,                 /* 2rem is the spread value*/
+    inset 0 0 2rem #4f0227,
+    0 0 4rem #4f0227;
+}
+.navlist li a::after{                /* 'after' is a pseudo element( were we will creat the underline). when using a pseudo element the first property we use is the 'content' property*/
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}                
+.navlist li a:hover::after{
+    transform: scaleX(1);
+}
